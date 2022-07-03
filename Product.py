@@ -53,7 +53,7 @@ banana = Product('banana', 10)
 buyer_1 = Buyer('Alex', '123')
 buyer_2 = Buyer('Andrey', '456')
 order = Order(buyer_1)
-order += apple, 1
-order.__iadd__(apple, 1)
+order += apple, 1 # Не рабоатет
+order.__iadd__(apple, 1) # Работает 
 order.__iadd__(banana, 2)
 print(order)
