@@ -26,8 +26,9 @@ class Order:
         self.kol = []
 
     def __iadd__(self, other, que):
-        self.cart.append(other)
-        self.kol.append(que)
+        if isinstance(other, Product):
+            self.cart.append(other)
+            self.kol.append(que)
         return self
 
     def total_price(self):
