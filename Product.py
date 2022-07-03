@@ -31,6 +31,11 @@ class Order:
             self.kol.append(que)
         return self
 
+    def __isub__(self, other):
+        if isinstance(other, Product):
+            self.cart.remove(other)
+        return self
+
     def total_price(self):
         total = 0
         for i, item in enumerate(self.cart):
@@ -53,7 +58,8 @@ banana = Product('banana', 10)
 buyer_1 = Buyer('Alex', '123')
 buyer_2 = Buyer('Andrey', '456')
 order = Order(buyer_1)
-order += apple, 1 # Не рабоатет
+# order += apple, 1 # Не рабоатет
 order.__iadd__(apple, 1) # Работает 
 order.__iadd__(banana, 2)
+order -= banana
 print(order)
