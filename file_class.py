@@ -1,10 +1,11 @@
 def decorator(func):
-
+    name = f'{func.__qualname__}'.split('.')
+    
     def doc(self):
-        file = open(Product.__name__, 'w')
-        file.write(f'{func}')
+        file = open(name[0], 'w')
+        file.write(f'{func(self)}')
         file.close()
-        return file
+        return func(self)
     return doc
 
 
