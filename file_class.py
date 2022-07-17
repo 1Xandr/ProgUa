@@ -2,7 +2,7 @@ def decorator(func):
 
     def doc(self):
         file = open(Product.__name__, 'w')
-        file.write(func)
+        file.write(f'{func}')
         file.close()
         return file
     return doc
