@@ -12,7 +12,7 @@ def log(funk):
             for _ in range(n):
                 funk(*args)
                 f.write(f'\n{time.time() - start_time}')
-
+            f.close()
             return funk(*args)
 
         return loger
